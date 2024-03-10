@@ -6,7 +6,8 @@
   remote_user: ubuntu
   
   tasks:
-    - import_tasks: pam_pwquality.yml
-    - import_tasks: user_and_groups.yml
-    - import_tasks: file_creation.yml
-    - import_tasks: nginx_setup_automation.yml
+    # - import_tasks: ./roles/pam_pwquality.yml
+    # - import_tasks: ./roles/user_and_groups.yml
+    # - import_tasks: ./roles/file_creation.yml
+    # - import_tasks: ./roles/nginx_setup_automation.yml
+    - import_tasks: ./roles/gather_from_servers.yml

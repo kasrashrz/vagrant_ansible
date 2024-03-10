@@ -1,0 +1,24 @@
+- name: gather data from servers and update them
+  hosts: all
+  tasks:
+
+    - name: get data from servers
+      group_by:
+        key: OS_{{ ansible_facts['distribution'] }}
+
+- hosts: OS_UBUNTU
+  tasks:
+    - name: update the OS_UBUNTU servers
+      become: yes
+      apt:
+        state: latest
+        upgrade: yes
+        update_cache: yes
+
+- hosts: OS_CentOS
+  tasks:
+    - name: update the OS_CentOS servers
+      become: yes
+      yum:
+        name: '*'
+        state: latest
