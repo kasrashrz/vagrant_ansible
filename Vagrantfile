@@ -83,7 +83,7 @@ Vagrant.configure("2") do |config|
    # SHELL
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "./ansible_playbooks/main.yml"
+    ansible.playbook = "./ansible/master.yml"
     ansible.compatibility_mode = "2.0"
   end
 

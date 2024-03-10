@@ -1,5 +1,0 @@
----
-- name: Create a file in the engineering directory
-  file:
-    path: "/home/vagrant/2.txt"
-    state: touch
