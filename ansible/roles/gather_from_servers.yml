@@ -25,10 +25,3 @@
   debug:
     msg: 'OS is ubuntu'
   when: ansible_distribution == 'Ubuntu'
-
-# - name: Update and upgrade apt packages
-#   become: true
-#   apt:
-#     upgrade: yes
-#     update_cache: yes
-#   when: update_apt
