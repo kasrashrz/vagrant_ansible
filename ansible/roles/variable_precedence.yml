@@ -1,9 +1,18 @@
 ---
-- name: Understanding Variable Precedence
-  hosts: default
-  vars:
-    fav_distro: "Ubuntu"
+- hosts: all
+  vars_prompt:
+
+    - name: Understanding Variable Precedence
+      hosts: default
+      vars:
+        fav_distro: "Ubuntu"
+        
+    - name: Get name from prompt
+      prompt: Whats your name?
+      private: false
+
   tasks:
+  
     - name: Show value of fav_distro
       debug:
         msg: Favorite distro is {{ fav_distro }}
