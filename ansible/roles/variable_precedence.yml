@@ -2,17 +2,34 @@
 - hosts: all
   vars_prompt:
 
-    - name: Understanding Variable Precedence
-      hosts: default
-      vars:
-        fav_distro: "Ubuntu"
+
         
     - name: Get name from prompt
       prompt: Whats your name?
       private: false
 
   tasks:
-  
+
+    - name: Understanding Variable Precedence
+      vars:
+        fav_distro: Ubuntu
     - name: Show value of fav_distro
       debug:
         msg: Favorite distro is {{ fav_distro }}
+
+# ---
+# - hosts: all
+#   vars_prompt:
+
+#     - name: username
+#       prompt: What is your username?
+#       private: false
+
+#     - name: password
+#       prompt: What is your password?
+
+#   tasks:
+
+#     - name: Print a message
+#       ansible.builtin.debug:
+#         msg: 'Logging in as {{ username }}'
